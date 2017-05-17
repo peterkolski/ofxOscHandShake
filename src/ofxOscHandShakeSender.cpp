@@ -14,9 +14,9 @@ ofxOscHandShakeSender::ofxOscHandShakeSender()
     addressHandShake_  = "ofxOscHandShake/reachout";
 }
 
-void ofxOscHandShakeSender::setup( const int portSender, const string deviceName )
+void ofxOscHandShakeSender::setup( const int portSendTo, const string deviceName )
 {
-    sender_.setup( hostBroadcast_, portSender );
+    sender_.setup( hostBroadcast_, portSendTo );
     deviceName_ = deviceName;
 }
 

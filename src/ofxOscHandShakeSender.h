@@ -17,7 +17,7 @@
 class ofxOscHandShakeSender{
 public:
     ofxOscHandShakeSender();
-    void setup( const int portSender, const string deviceName );
+    void setup( const int portSendTo, const string deviceName );
     void update();
     
 private:
