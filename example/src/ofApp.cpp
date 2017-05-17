@@ -19,6 +19,6 @@ void ofApp::draw(){
     for ( int i = 0; i < handShaker.getDeviceAmountFound(); i++ )
     {
         ofDrawBitmapStringHighlight( "Name " + ofToString( i )+ ": " + ofToString( handShaker.getDeviceName( i ) ), 100, 140 + i*20);
-        ofDrawBitmapStringHighlight( "IP " + ofToString( i )+ ": " + ofToString( handShaker.getDeviceIP( i ) ), 300, 140 + i*20);
+        ofDrawBitmapStringHighlight( "IP " + ofToString( i )+ ": " + ofToString( handShaker.getDeviceIP( i ) ), 400, 140 + i*20);
     }
 }
