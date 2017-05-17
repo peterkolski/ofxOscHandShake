@@ -30,11 +30,13 @@ void ofxOscHandShakeReceiver::update()
         {
             // Message 0 -> name
             // Message 1 -> isReceived
-            
+
+            auto deviceName = m.getArgAsString( 0 );
+
             // --- Does the device not exist yet
-            if ( deviceIP_.count( m.getArgAsString( 0 ) ) == 0 ) {
-                deviceList_.push_back( m.getArgAsString( 0 ) );
-                deviceIP_[ m.getArgAsString( 0 ) ] = m.getRemoteIp();
+            if ( deviceIP_.count( deviceName ) == 0 ) {
+                deviceList_.push_back( deviceName );
+                deviceIP_[ deviceName ] = m.getRemoteIp();
             }
         }
     }
