@@ -10,7 +10,6 @@
 ofxOscHandShakeSender::ofxOscHandShakeSender()
 {
     isReceived_       = false;
-//    hostBroadcast_    = "0.0.0.0";
     hostBroadcast_    = "192.168.2.255";
     addressHandShake_  = "ofxOscHandShake/reachout";
     sender_.enableBroadcast();
