@@ -2,9 +2,11 @@
 
 
 void ofApp::setup(){
-    sender1.setup( 9999, "RPi 1" );
-    sender2.setup( 9999, "RPi 2" );
-    reciever.setup( 9999 );
+    auto portToReciever = 9999;
+
+    sender1.setup( portToReciever, "RPi 1" );
+    sender2.setup( portToReciever, "RPi 2" );
+    reciever.setup( portToReciever );
 }
 
 
