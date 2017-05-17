@@ -4,15 +4,15 @@
 void ofApp::setup(){
     auto portToReciever = 9999;
 
-    sender1.setup( portToReciever, "RPi 1" );
-    sender2.setup( portToReciever, "RPi 2" );
+    sender1.setup( portToReciever, "Peter1" );
+//    sender2.setup( portToReciever, "Peter2" );
     reciever.setup( portToReciever );
 }
 
 
 void ofApp::update(){
     sender1.update();
-    sender2.update();
+//    sender2.update();
     reciever.update();
 }
 
@@ -31,6 +31,10 @@ void ofApp::draw(){
     }
 
     ofDrawBitmapStringHighlight( "Amount: " + ofToString( deviceAmountFound ), 100, 100 );
-    ofDrawBitmapStringHighlight( "Name 0: " + ofToString( deviceName ), 100, 140 );
-    ofDrawBitmapStringHighlight( "IP 0: " + ofToString( deviceIP ), 100, 180 );
+
+    for ( int i = 0; i < deviceAmountFound; i++ )
+    {
+        ofDrawBitmapStringHighlight( "Name 0: " + ofToString( deviceName ), 100, 140 + i*20);
+        ofDrawBitmapStringHighlight( "IP 0: " + ofToString( deviceIP ), 300, 140 + i*20);
+    }
 }
