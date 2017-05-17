@@ -3,15 +3,17 @@
 
 void ofApp::setup(){
     auto portToReciever = 9999;
-
     sender1.setup( "Peter new", portToReciever, "192.168.2.255" );
     reciever.setup( portToReciever );
+
+    handShaker.setup( "Peter new", "192.168.2.255" );
 }
 
 
 void ofApp::update(){
     sender1.update();
     reciever.update();
+    handShaker.update();
 }
 
 

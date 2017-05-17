@@ -15,7 +15,8 @@
 class ofxOscHandShake
 {
 public:
-    void setup();
+    void setup( const string deviceName, const string broadcastIP );
+    void update();
 
 private:
     ofxOscHandShakeSender   sender_;
