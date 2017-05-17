@@ -18,6 +18,8 @@ public:
     void setup( const string deviceName, const string broadcastIP );
     void update();
 
+    int     getDeviceAmountFound()              { return receiver_.getDeviceAmountFound(); }
+
 private:
     ofxOscHandShakeSender   sender_;
     ofxOscHandShakeReceiver receiver_;
