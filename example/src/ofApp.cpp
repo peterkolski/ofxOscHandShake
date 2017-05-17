@@ -4,7 +4,7 @@
 void ofApp::setup(){
     auto portToReciever = 9999;
 
-    sender1.setup( portToReciever, "Peter new" );
+    sender1.setup( "Peter new", portToReciever, "192.168.2.255" );
     reciever.setup( portToReciever );
 }
 

@@ -17,12 +17,12 @@
 class ofxOscHandShakeSender{
 public:
     ofxOscHandShakeSender();
-    void setup( const int portSendTo, const string deviceName );
+    void setup( const string deviceName, const int portSendTo, const string broadcastIP );
     void update();
     
 private:
     ofxOscSender    sender_;
-    string          addressHandShake_, hostBroadcast_;
+    string          addressHandShake_;
     string          deviceName_;
     bool            isReceived_;
 };
