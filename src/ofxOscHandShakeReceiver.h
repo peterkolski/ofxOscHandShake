@@ -19,7 +19,7 @@ class ofxOscHandShakeReceiver{
 public:
     ofxOscHandShakeReceiver();
     
-    void setup( const int portRecieveingAllMsg );
+    void    setup( const int portRecieveingAllMsg );
     void    update();
     
     int     getDeviceAmountFound()              { return deviceList_.size(); }

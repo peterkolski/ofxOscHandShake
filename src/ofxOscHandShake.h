@@ -18,9 +18,10 @@ public:
     void setup( const string deviceName, const string broadcastIP );
     void update();
 
-    int     getDeviceAmountFound()              { return receiver_.getDeviceAmountFound(); }
-    string  getDeviceName( const unsigned int ID ) { return receiver_.getDeviceName( ID ); }
-    string  getDeviceIP( const unsigned int ID ) { return receiver_.getDeviceIP( ID ); }
+    int     getDeviceAmountFound()                  { return receiver_.getDeviceAmountFound(); }
+    string  getDeviceName( const unsigned int ID )  { return receiver_.getDeviceName( ID ); }
+    string  getDeviceIP( const unsigned int ID )    { return receiver_.getDeviceIP( ID ); }
+    string  getDeviceIP( const string name )        { return receiver_.getDeviceIP( name ); }
 
 private:
     ofxOscHandShakeSender   sender_;
