@@ -2,7 +2,7 @@
 
 
 void ofApp::setup(){
-    handShaker.setup( "Peter new", "192.168.2.255" );
+    handShaker.setup( "BerlinPunk", "192.168.2.255" );
 }
 
 
