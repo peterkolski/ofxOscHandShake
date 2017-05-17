@@ -34,7 +34,7 @@ void ofApp::draw(){
 
     for ( int i = 0; i < deviceAmountFound; i++ )
     {
-        ofDrawBitmapStringHighlight( "Name 0: " + ofToString( deviceName ), 100, 140 + i*20);
-        ofDrawBitmapStringHighlight( "IP 0: " + ofToString( deviceIP ), 300, 140 + i*20);
+        ofDrawBitmapStringHighlight( "Name " + ofToString( i )+ ": " + ofToString( deviceName ), 100, 140 + i*20);
+        ofDrawBitmapStringHighlight( "IP " + ofToString( i )+ ": " + ofToString( deviceIP ), 300, 140 + i*20);
     }
 }
