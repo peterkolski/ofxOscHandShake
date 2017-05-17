@@ -21,6 +21,12 @@ void ofxOscHandShakeReceiver::setup( const int portRecieveingAllMsg )
 
 void ofxOscHandShakeReceiver::update()
 {
+    if ( ofGetElapsedTimeMillis() % 100 == 0)
+    {
+        deviceIP_.clear();
+        deviceList_.clear();
+    }
+
     while( receiver_.hasWaitingMessages() )
     {
         ofxOscMessage m;
