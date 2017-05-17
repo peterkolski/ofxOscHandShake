@@ -44,7 +44,7 @@ void ofxOscHandShakeReceiver::update()
 
 string  ofxOscHandShakeReceiver::getDeviceName(const unsigned int ID )
 {
-    if (  ID <= deviceList_.size() )
+    if (  ID < deviceList_.size() )
     {
         return deviceList_[ ID ];
     }
@@ -71,7 +71,7 @@ string  ofxOscHandShakeReceiver::getDeviceIP( const string name )
 
 string  ofxOscHandShakeReceiver::getDeviceIP( const unsigned int ID )
 {
-    if (  ID <= deviceList_.size() )
+    if (  ID < deviceList_.size() )
     {
         return deviceIP_[ deviceList_[ ID ]  ];
     }

@@ -9,4 +9,7 @@ class ofApp : public ofBaseApp{
 		void setup();
 		void update();
 		void draw();
+
+    ofxOscHandShakeSender   sender;
+    ofxOscHandShakeReceiver reciever;
 };
