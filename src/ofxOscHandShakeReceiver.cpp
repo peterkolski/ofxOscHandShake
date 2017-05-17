@@ -13,10 +13,9 @@ ofxOscHandShakeReceiver::ofxOscHandShakeReceiver()
     addressHandShake_  = "ofxOscHandShake/reachout";
 }
 
-void ofxOscHandShakeReceiver::setup( const int portOfSender, const int portOfReceiver )
+void ofxOscHandShakeReceiver::setup( const int portRecieveingAllMsg )
 {
-//    sender_.setup( , portOfReceiver );
-        receiver_.setup( portOfSender );
+        receiver_.setup( portRecieveingAllMsg );
 }
 
 
@@ -46,7 +45,7 @@ string  ofxOscHandShakeReceiver::getDeviceName(const unsigned int ID )
 {
     if (  ID < deviceList_.size() )
     {
-        return deviceList_[ ID ];
+        return deviceList_.at( ID );
     }
     else
     {
@@ -59,7 +58,7 @@ string  ofxOscHandShakeReceiver::getDeviceIP( const string name )
 {
     if (deviceIP_.count( name ) )
     {
-        return deviceIP_[ name ];
+        return deviceIP_.at( name );
     }
     else
     {
@@ -73,7 +72,7 @@ string  ofxOscHandShakeReceiver::getDeviceIP( const unsigned int ID )
 {
     if (  ID < deviceList_.size() )
     {
-        return deviceIP_[ deviceList_[ ID ]  ];
+        return deviceIP_.at( deviceList_[ ID ] );
     }
     else
     {

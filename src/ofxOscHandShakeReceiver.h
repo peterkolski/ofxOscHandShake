@@ -19,7 +19,7 @@ class ofxOscHandShakeReceiver{
 public:
     ofxOscHandShakeReceiver();
     
-    void    setup( const int portOfSender, const int portOfReceiver );
+    void setup( const int portRecieveingAllMsg );
     void    update();
     
     int     getDeviceAmountFound()              { return deviceList_.size(); }
@@ -28,7 +28,6 @@ public:
     string  getDeviceIP( const unsigned int ID );
     
 private:
-//    ofxOscSender    sender_;
     ofxOscReceiver  receiver_;
     string          addressHandShake_;
     bool            isReceived_;
