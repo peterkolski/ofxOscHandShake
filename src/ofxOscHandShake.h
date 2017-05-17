@@ -19,10 +19,13 @@ public:
     void update();
 
     int     getDeviceAmountFound()              { return receiver_.getDeviceAmountFound(); }
+    string  getDeviceName( const unsigned int ID ) { return receiver_.getDeviceName( ID ); }
+    string  getDeviceIP( const unsigned int ID ) { return receiver_.getDeviceIP( ID ); }
 
 private:
     ofxOscHandShakeSender   sender_;
     ofxOscHandShakeReceiver receiver_;
 };
+
 
 #endif /* defined(__Sound__ofxOscHandShake__) */
