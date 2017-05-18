@@ -32,7 +32,7 @@ private:
     string          addressHandShake_;
 
     std::map< string, string >   deviceIP_;
-    vector< unsigned int >       deviceList_; //TODO why was this string before?
+    vector< string >             deviceList_;
 };
 
 
