@@ -11,6 +11,4 @@ class ofApp : public ofBaseApp{
 		void draw();
 
 	ofxOscHandShake			handShaker;
-    ofxOscHandShakeSender   sender1;
-    ofxOscHandShakeReceiver reciever;
 };
