@@ -21,16 +21,7 @@ public:
     
     void    setup( const int portRecieveingAllMsg );
     void    update();
-    
-    int     getDeviceAmountFound()              { return deviceNameList_.size(); }
-    string  getDeviceName( const unsigned int ID );
-    string  getDeviceIP( const string name );
-    string  getDeviceIP( const unsigned int ID );
 
-    ofxOscHandShakeDevice getDevice( const unsigned int ID );
-    ofxOscHandShakeDevice getDevice( const string name );
-
-    // ----------------------------
     bool    hasRecievedDevice() { return receiver_.hasWaitingMessages(); }
     ofxOscHandShakeDevice getDeviceCurrent();
 
