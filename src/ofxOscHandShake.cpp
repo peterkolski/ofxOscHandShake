@@ -10,9 +10,7 @@ void ofxOscHandShake::setup( const string deviceName, const string broadcastIP )
 void ofxOscHandShake::update()
 {
     sender_.update();
-    receiver_.update();
     updateReceiver();
-
 }
 
 void ofxOscHandShake::updateReceiver()
@@ -30,5 +28,32 @@ void ofxOscHandShake::updateReceiver()
         {
             devicesMap_.insert( std::make_pair( device.getNameDevice(), device ) );
         }
+    }
+}
+
+//TODO Maybe reference? But then no last creation possible
+ofxOscHandShakeDevice ofxOscHandShake::getDevice( const unsigned int ID )
+{
+    if (  ID < devicesMap_.size() )
+    {
+        return (*(std::next( devicesMap_.begin(), ID ))).second;
+    }
+    else
+    {
+        ofLogError() << "OscHandShakeReceiver - No device found with id " << ID;
+        return ofxOscHandShakeDevice{"", 0}; //TODO What should I here?
+    }
+}
+
+ofxOscHandShakeDevice ofxOscHandShake::getDevice( const string name )
+{
+    if (  devicesMap_.count( name ) )
+    {
+        return devicesMap_.at( name );
+    }
+    else
+    {
+        ofLogError() << "OscHandShakeReceiver - No device found with name " << name;
+        return ofxOscHandShakeDevice{"", 0}; //TODO What should I here?
     }
 }

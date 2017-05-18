@@ -17,14 +17,14 @@ class ofxOscHandShake
 public:
     void setup( const string deviceName, const string broadcastIP );
     void update();
-
-    int     getDeviceAmountFound()                  { return receiver_.getDeviceAmountFound(); }
+    
+    int     getDeviceAmountFound()                  { return devicesMap_.size(); }
     string  getDeviceName( const unsigned int ID )  { return receiver_.getDeviceName( ID ); }
     string  getDeviceIP( const unsigned int ID )    { return receiver_.getDeviceIP( ID ); }
     string  getDeviceIP( const string name )        { return receiver_.getDeviceIP( name ); }
 
-    ofxOscHandShakeDevice getDevice( const unsigned int ID )    { return receiver_.getDevice( ID ); }
-    ofxOscHandShakeDevice getDevice( const string name )        { return receiver_.getDevice( name ); }
+    ofxOscHandShakeDevice getDevice( const unsigned int ID );
+    ofxOscHandShakeDevice getDevice( const string name );
 
 private:
     void    updateReceiver();
