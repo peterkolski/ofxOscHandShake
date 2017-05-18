@@ -30,10 +30,9 @@ public:
 private:
     ofxOscReceiver  receiver_;
     string          addressHandShake_;
-    bool            isReceived_;
-    
+
     std::map< string, string >   deviceIP_;
-    vector< string >             deviceList_;
+    vector< unsigned int >       deviceList_; //TODO why was this string before?
 };
 
 
