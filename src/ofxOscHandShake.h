@@ -27,6 +27,9 @@ public:
     ofxOscHandShakeDevice getDevice( const string name )        { return receiver_.getDevice( name ); }
 
 private:
+    void    updateReceiver();
+
+    std::unordered_map< string, ofxOscHandShakeDevice > devicesMap_;
     ofxOscHandShakeSender   sender_;
     ofxOscHandShakeReceiver receiver_;
 };

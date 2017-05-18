@@ -30,6 +30,10 @@ public:
     ofxOscHandShakeDevice getDevice( const unsigned int ID );
     ofxOscHandShakeDevice getDevice( const string name );
 
+    // ----------------------------
+    bool    hasRecievedDevice() { return receiver_.hasWaitingMessages(); }
+    ofxOscHandShakeDevice getDeviceCurrent();
+
 private:
     ofxOscReceiver  receiver_;
     string          addressHandShake_;

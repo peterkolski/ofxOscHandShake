@@ -11,4 +11,24 @@ void ofxOscHandShake::update()
 {
     sender_.update();
     receiver_.update();
+    updateReceiver();
+
+}
+
+void ofxOscHandShake::updateReceiver()
+{
+    // --- Clear after a second
+    if ( ofGetElapsedTimeMillis() % 100 == 0)
+    {
+        devicesMap_.clear();
+    }
+
+    while( receiver_.hasRecievedDevice() )
+    {
+        auto device = receiver_.getDeviceCurrent();
+        if ( devicesMap_.count( device.getNameDevice() ) == 0 )
+        {
+            devicesMap_.insert( std::make_pair( device.getNameDevice(), device ) );
+        }
+    }
 }

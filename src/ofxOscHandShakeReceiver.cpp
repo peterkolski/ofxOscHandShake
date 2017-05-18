@@ -55,6 +55,24 @@ void ofxOscHandShakeReceiver::update()
 
 }
 
+
+ofxOscHandShakeDevice ofxOscHandShakeReceiver::getDeviceCurrent()
+{
+    ofxOscMessage m;
+    receiver_.getNextMessage(&m);
+
+    // TODO This can crash, if you get the wrong message
+
+//    if ( m.getAddress() == addressHandShake_ )
+//    {
+        // Message 0 -> name
+        // Message 1 -> isReceived
+
+//    }
+
+    return ofxOscHandShakeDevice{ ( m.getArgAsString( 0 ) ), m.getRemoteIp() };
+}
+
 string  ofxOscHandShakeReceiver::getDeviceName(const unsigned int ID )
 {
     if (  ID < deviceNameList_.size() )
@@ -122,3 +140,4 @@ ofxOscHandShakeDevice ofxOscHandShakeReceiver::getDevice( const string name )
         return ofxOscHandShakeDevice{"", 0}; //TODO What should I here?
     }
 }
+
