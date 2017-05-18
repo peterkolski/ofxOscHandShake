@@ -24,7 +24,7 @@ void ofxOscHandShakeReceiver::update()
     if ( ofGetElapsedTimeMillis() % 100 == 0)
     {
         deviceIP_.clear();
-        deviceList_.clear();
+        deviceNameList_.clear();
     }
 
     while( receiver_.hasWaitingMessages() )
@@ -41,8 +41,14 @@ void ofxOscHandShakeReceiver::update()
 
             // --- Does the device not exist yet
             if ( deviceIP_.count( deviceName ) == 0 ) {
-                deviceList_.push_back( deviceName );
+                deviceNameList_.push_back( deviceName );
                 deviceIP_[ deviceName ] = m.getRemoteIp();
+            }
+
+            if ( devicesMap_.count( deviceName ) )
+            {
+                devicesMap_.emplace( std::make_pair( deviceName,
+                                                     ofxOscHandShakeDevice{ deviceName, m.getRemoteIp() }) );
             }
         }
     }
@@ -51,9 +57,9 @@ void ofxOscHandShakeReceiver::update()
 
 string  ofxOscHandShakeReceiver::getDeviceName(const unsigned int ID )
 {
-    if (  ID < deviceList_.size() )
+    if (  ID < deviceNameList_.size() )
     {
-        return deviceList_.at( ID );
+        return deviceNameList_.at( ID );
     }
     else
     {
@@ -78,9 +84,9 @@ string  ofxOscHandShakeReceiver::getDeviceIP( const string name )
 
 string  ofxOscHandShakeReceiver::getDeviceIP( const unsigned int ID )
 {
-    if (  ID < deviceList_.size() )
+    if (  ID < deviceNameList_.size() )
     {
-        return deviceIP_.at( deviceList_[ ID ] );
+        return deviceIP_.at( deviceNameList_[ ID ] );
     }
     else
     {
@@ -88,4 +94,31 @@ string  ofxOscHandShakeReceiver::getDeviceIP( const unsigned int ID )
         return "";
     }
 
+}
+
+//TODO Maybe reference? But then no last creation possible
+ofxOscHandShakeDevice ofxOscHandShakeReceiver::getDevice( const unsigned int ID )
+{
+    if (  ID < devicesMap_.size() )
+    {
+        return devicesMap_.at( deviceNameList_[ ID ] );
+    }
+    else
+    {
+        ofLogError() << "OscHandShakeReceiver - No device found with id " << ID;
+        return ofxOscHandShakeDevice{"", 0}; //TODO What should I here?
+    }
+}
+
+ofxOscHandShakeDevice ofxOscHandShakeReceiver::getDevice( const string name )
+{
+    if (  devicesMap_.count( name ) )
+    {
+        return devicesMap_.at( name );
+    }
+    else
+    {
+        ofLogError() << "OscHandShakeReceiver - No device found with name " << name;
+        return ofxOscHandShakeDevice{"", 0}; //TODO What should I here?
+    }
 }
