@@ -45,7 +45,7 @@ void ofxOscHandShakeReceiver::update()
                 deviceIP_[ deviceName ] = m.getRemoteIp();
             }
 
-            if ( devicesMap_.count( deviceName ) )
+            if ( devicesMap_.count( deviceName ) == 0 )
             {
                 devicesMap_.emplace( std::make_pair( deviceName,
                                                      ofxOscHandShakeDevice{ deviceName, m.getRemoteIp() }) );
@@ -101,7 +101,7 @@ ofxOscHandShakeDevice ofxOscHandShakeReceiver::getDevice( const unsigned int ID 
 {
     if (  ID < devicesMap_.size() )
     {
-        return devicesMap_.at( deviceNameList_[ ID ] );
+        return (*(std::next( devicesMap_.begin(), ID ))).second;
     }
     else
     {

@@ -23,6 +23,9 @@ public:
     string  getDeviceIP( const unsigned int ID )    { return receiver_.getDeviceIP( ID ); }
     string  getDeviceIP( const string name )        { return receiver_.getDeviceIP( name ); }
 
+    ofxOscHandShakeDevice getDevice( const unsigned int ID )    { return receiver_.getDevice( ID ); }
+    ofxOscHandShakeDevice getDevice( const string name )        { return receiver_.getDevice( name ); }
+
 private:
     ofxOscHandShakeSender   sender_;
     ofxOscHandShakeReceiver receiver_;

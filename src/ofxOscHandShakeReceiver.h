@@ -37,7 +37,7 @@ private:
     std::map< string, string >   deviceIP_;
     vector< string >             deviceNameList_;
 
-    std::map< string, ofxOscHandShakeDevice > devicesMap_;
+    std::unordered_map< string, ofxOscHandShakeDevice > devicesMap_;
 };
 
 

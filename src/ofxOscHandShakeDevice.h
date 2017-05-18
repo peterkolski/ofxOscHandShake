@@ -19,8 +19,8 @@ struct ofxOscHandShakeDevice
     ofxOscHandShakeDevice( const string &nameDevice_, const string &ip_ )
             : nameDevice_( nameDevice_ ), ip_( ip_ ) {}
 
-    const string &getNameDevice_() const { return nameDevice_; }
-    const string &getIp_() const { return ip_; }
+    const string &getNameDevice() const { return nameDevice_; }
+    const string &getIp() const { return ip_; }
 //    int getPortRecieveing() const { return portRecieveing_; }
 //    int getPortSendingFrom() const { return portSendingFrom_; }
 
