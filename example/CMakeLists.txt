@@ -22,6 +22,7 @@ set( ${APP_NAME}_SOURCE_FILES
         src/main.cpp
         src/ofApp.cpp
         ../src/ofxOscHandShake.cpp
+        ../src/ofxOscHandShakeDevice.h
         )
 
 
