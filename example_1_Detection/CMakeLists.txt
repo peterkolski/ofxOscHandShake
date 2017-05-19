@@ -1,5 +1,5 @@
 # ======================= ofxCMake Vers. 0.1 =============
-#  PUT THIS FILE INTO YOUR OPENFRAMEWORKS PROJECT FOLDER
+#  https://github.com/BildPeter/ofxCMake
 
 # ========================================================
 # ===================== CMake Settings ===================
