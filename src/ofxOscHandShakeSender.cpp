@@ -9,15 +9,23 @@
 
 ofxOscHandShakeSender::ofxOscHandShakeSender()
 {
-    isReceived_       = false;
     addressHandShake_  = "ofxOscHandShake/reachout";
     sender_.enableBroadcast();
 }
 
-void ofxOscHandShakeSender::setup( const string deviceName, const int portSendTo, const string broadcastIP )
+void ofxOscHandShakeSender::setup( const string deviceName, const int portBroadcast, const string broadcastIP )
 {
-    sender_.setup( broadcastIP, portSendTo );
+    sender_.setup( broadcastIP, portBroadcast );
     deviceName_ = deviceName;
+}
+
+void ofxOscHandShakeSender::setup( const string deviceName, const int portBroadcast, const string broadcastIP,
+                                   const int portGettingMessage, const int portSending )
+{
+    sender_.setup( broadcastIP, portBroadcast );
+    deviceName_         = deviceName;
+    portGettingMessage_ = portGettingMessage;
+    portSendingTo_      = portSending;
 }
 
 void ofxOscHandShakeSender::update()
@@ -25,6 +33,7 @@ void ofxOscHandShakeSender::update()
     ofxOscMessage   messageInfo;
     messageInfo.setAddress( addressHandShake_ );
     messageInfo.addStringArg( deviceName_ );
-    messageInfo.addIntArg( isReceived_ );
+    messageInfo.addIntArg( portGettingMessage_ );
+    messageInfo.addIntArg( portSendingTo_ );
     sender_.sendMessage( messageInfo );
 }
