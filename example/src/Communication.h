@@ -4,7 +4,7 @@
 #include "ofxOscHandShake.h"
 
 
-class ofApp : public ofBaseApp{
+class Communication : public ofBaseApp{
 	public:
 		void setup();
 		void update();

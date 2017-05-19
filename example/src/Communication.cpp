@@ -1,20 +1,20 @@
-#include "ofApp.h"
+#include "Communication.h"
 
 
-void ofApp::setup(){
-    auto broadcastIP = "192.168.2.255";
+void Communication::setup(){
+    auto broadcastIP = "192.168.2.255"; // ---> put your broadcast IP here
 //    auto broadcastIP = "10.230.0.255";
 
     handShaker.setup( "BerlinPunk", broadcastIP );
 }
 
 
-void ofApp::update(){
+void Communication::update(){
     handShaker.update();
 }
 
 
-void ofApp::draw(){
+void Communication::draw(){
     ofBackground( 255 );
 
     ofDrawBitmapStringHighlight( "Amount: " + ofToString( handShaker.getDeviceAmountFound() ), 100, 100 );

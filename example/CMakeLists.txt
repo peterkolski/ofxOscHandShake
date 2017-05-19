@@ -1,5 +1,5 @@
 # ======================= ofxCMake Vers. 0.1 =============
-#  PUT THIS FILE INTO YOUR OPENFRAMEWORKS PROJECT FOLDER
+# https://github.com/BildPeter/ofxCMake
 
 # ========================================================
 # ===================== CMake Settings ===================
@@ -11,7 +11,7 @@ project( OscHandShake )
 # ===================== User Settings ====================
 # ========================================================
 # ---------------------- App name  -----------------------
-set( APP_NAME   ofxOscHandShake_Example )
+set( APP_NAME   ofxOscHandShake_Communication )
 
 # ------------------------ OF Path -----------------------
 # --- If outside the OF structure, set an absolute OF path
@@ -20,7 +20,7 @@ set( OF_DIRECTORY_BY_USER "../../.." )
 # --------------------- Source Files ---------------------
 set( ${APP_NAME}_SOURCE_FILES
         src/main.cpp
-        src/ofApp.cpp
+        src/Communication.cpp
         ../src/ofxOscHandShake.cpp
         ../src/ofxOscHandShakeDevice.h
         )
