@@ -34,8 +34,8 @@ public:
 private:
     void    updateReceiver();
 
-    string                  adressBroadcast = "ofxOscHandShake/reachout";
-    int                     portBroadcast  = 19591; // Should be a number, which nobody uses
+    string                  adressBroadcast_ = "ofxOscHandShake/reachout";
+    int                     portBroadcast_   = 19591; // Should be a number, which nobody uses
     ofxOscHandShakeSender   sender_;
     ofxOscHandShakeReceiver receiver_;
     std::unordered_map< string, ofxOscHandShakeDevice > devicesMap_;

@@ -2,15 +2,15 @@
 
 void ofxOscHandShake::setup( const string deviceName, const string broadcastIP )
 {
-    sender_.setup( deviceName, portBroadcast, broadcastIP );
-    receiver_.setup( portBroadcast, adressBroadcast );
+    sender_.setup( deviceName, portBroadcast_, broadcastIP, adressBroadcast_ );
+    receiver_.setup( portBroadcast_, adressBroadcast_ );
 }
 
 void ofxOscHandShake::setup( const string deviceName, const string broadcastIP, const int portGetting,
                              const int portSendingTo )
 {
-    sender_.setup( deviceName, portBroadcast, broadcastIP, portGetting, portSendingTo );
-    receiver_.setup( portBroadcast, adressBroadcast );
+    sender_.setup( deviceName, portBroadcast_, broadcastIP, portGetting, portSendingTo, adressBroadcast_ );
+    receiver_.setup( portBroadcast_, adressBroadcast_ );
 }
 
 void ofxOscHandShake::update()
