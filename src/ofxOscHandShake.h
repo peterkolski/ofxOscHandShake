@@ -16,6 +16,7 @@ class ofxOscHandShake
 {
 public:
     void setup( const string deviceName, const string broadcastIP );
+    void setup( const string deviceName, const string broadcastIP, const int portGetting, const int portSendingTo );
     void update();
 
     int     getDeviceAmountFound()                  { return devicesMap_.size(); }
@@ -29,6 +30,9 @@ public:
 private:
     void    updateReceiver();
 
+    int portBroadcast  = 19591; // Should be a number, which nobody uses
+    int portGettingMessage_ = -1;
+    int portSendingTo_      = -1;
     std::unordered_map< string, ofxOscHandShakeDevice > devicesMap_;
     ofxOscHandShakeSender   sender_;
     ofxOscHandShakeReceiver receiver_;
