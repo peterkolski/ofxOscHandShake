@@ -8,15 +8,6 @@
 #include "ofxOscHandShakeSender.h"
 
 void ofxOscHandShakeSender::setup( const string deviceName, const int portBroadcast, const string broadcastIP,
-                                   const string adressBroadcast )
-{
-    addressHandShake_  = adressBroadcast;
-    sender_.enableBroadcast();
-    sender_.setup( broadcastIP, portBroadcast );
-    deviceName_ = deviceName;
-}
-
-void ofxOscHandShakeSender::setup( const string deviceName, const int portBroadcast, const string broadcastIP,
                                    const int portGettingMessage, const int portSending, string adressBroadcast )
 {
     addressHandShake_  = adressBroadcast;

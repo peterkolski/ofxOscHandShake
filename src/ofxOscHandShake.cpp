@@ -1,11 +1,5 @@
 #include "ofxOscHandShake.h"
 
-void ofxOscHandShake::setup( const string deviceName, const string broadcastIP )
-{
-    sender_.setup( deviceName, portBroadcast_, broadcastIP, adressBroadcast_ );
-    receiver_.setup( portBroadcast_, adressBroadcast_ );
-}
-
 void ofxOscHandShake::setup( const string deviceName, const string broadcastIP, const int portGetting,
                              const int portSendingTo )
 {

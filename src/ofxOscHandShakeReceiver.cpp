@@ -1,6 +1,5 @@
 //
 //  ofxOscHandShakeReceiver.cpp
-//  Sound
 //
 //  Created by Peter A. Kolski on 29.09.15.
 //
@@ -8,13 +7,11 @@
 
 #include "ofxOscHandShakeReceiver.h"
 
-
 void ofxOscHandShakeReceiver::setup( const int portRecieveingAllMsg, const string adressBroadcast )
 {
     receiver_.setup( portRecieveingAllMsg );
     addressHandShake_  = adressBroadcast;
 }
-
 
 ofxOscHandShakeDevice ofxOscHandShakeReceiver::getDeviceCurrent()
 {

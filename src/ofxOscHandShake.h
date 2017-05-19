@@ -15,7 +15,6 @@
 class ofxOscHandShake
 {
 public:
-    void setup( const string deviceName, const string broadcastIP );
     void setup( const string deviceName, const string broadcastIP, const int portGetting, const int portSendingTo );
     void update();
 

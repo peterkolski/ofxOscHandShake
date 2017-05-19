@@ -1,6 +1,5 @@
 //
 //  ofxOscHandShakeReceiver.h
-//  Sound
 //
 //  Created by Peter A. Kolski on 29.09.15.
 //
@@ -9,8 +8,6 @@
 #ifndef __Sound__ofxOscHandShakeReceiver__
 #define __Sound__ofxOscHandShakeReceiver__
 
-#include <stdio.h>
-#include <map>
 #include "ofMain.h"
 #include "ofxOsc.h"
 #include "ofxOscHandShakeDevice.h"
