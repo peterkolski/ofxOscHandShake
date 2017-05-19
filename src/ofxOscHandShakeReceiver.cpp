@@ -17,18 +17,17 @@ void ofxOscHandShakeReceiver::setup( const int portRecieveingAllMsg )
 
 ofxOscHandShakeDevice ofxOscHandShakeReceiver::getDeviceCurrent()
 {
-    ofxOscMessage m;
-    receiver_.getNextMessage(&m);
+    ofxOscMessage messageOSC;
+    receiver_.getNextMessage(&messageOSC);
 
     // TODO This can crash, if you get the wrong message
-
-//    if ( m.getAddress() == addressHandShake_ )
-//    {
-        // Message 0 -> name
-        // Message 1 -> isReceived
-
-//    }
-
-    return ofxOscHandShakeDevice{ ( m.getArgAsString( 0 ) ), m.getRemoteIp() };
+    // Message 0 -> name
+    // Message 1 -> portGetting
+    // Message 2 -> portSending
+    if ( messageOSC.getAddress() == addressHandShake_ )
+    {
+        return ofxOscHandShakeDevice{ ( messageOSC.getArgAsString( 0 ) ), messageOSC.getRemoteIp(),
+                                      messageOSC.getArgAsInt( 1 ), messageOSC.getArgAsInt( 2 ) };
+    }
 }
 
