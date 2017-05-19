@@ -32,3 +32,4 @@ void Communication::draw(){
         ofDrawBitmapStringHighlight( "port Sending : " + ofToString( handShaker.getPortSendingTo( i ) ), 700, 140 + i*20);
     }
 }
+1
