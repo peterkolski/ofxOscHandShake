@@ -23,5 +23,7 @@ void Communication::draw(){
     {
         ofDrawBitmapStringHighlight( "Name " + ofToString( i )+ ": " + ofToString( handShaker.getDeviceName( i ) ), 100, 140 + i*20);
         ofDrawBitmapStringHighlight( "IP " + ofToString( i )+ ": " + ofToString( handShaker.getDeviceIP( i ) ), 300, 140 + i*20);
+        ofDrawBitmapStringHighlight( "port Getting : " + ofToString( handShaker.getPortGettingMessage( i ) ), 500, 140 + i*20);
+        ofDrawBitmapStringHighlight( "port Sending : " + ofToString( handShaker.getPortSendingTo( i ) ), 700, 140 + i*20);
     }
 }

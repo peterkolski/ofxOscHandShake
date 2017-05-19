@@ -23,6 +23,10 @@ public:
     string  getDeviceName( const unsigned int ID )  { return getDevice( ID ).getNameDevice(); }
     string  getDeviceIP( const unsigned int ID )    { return getDevice( ID ).getIp(); }
     string  getDeviceIP( const string name )        { return getDevice( name ).getIp(); }
+    int     getPortGettingMessage( const string name ) { return getDevice( name ).getPortGettingMessage(); }
+    int     getPortGettingMessage( const int ID )   { return getDevice( ID ).getPortGettingMessage(); }
+    int     getPortSendingTo( const int ID )        { return getDevice( ID ).getPortSendingTo(); }
+    int     getPortSendingTo( const string name )   { return getDevice( name ).getPortSendingTo(); }
 
     ofxOscHandShakeDevice getDevice( const unsigned int ID ); //TODO reference
     ofxOscHandShakeDevice getDevice( const string name );
