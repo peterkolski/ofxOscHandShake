@@ -19,6 +19,7 @@ public:
     void update();
 
     int     getDeviceAmountFound()                  { return devicesMap_.size(); }
+    bool    isDeviceFound( const string name );
     string  getDeviceName( const unsigned int ID )  { return getDevice( ID ).getNameDevice(); }
     string  getDeviceIP( const unsigned int ID )    { return getDevice( ID ).getIp(); }
     string  getDeviceIP( const string name )        { return getDevice( name ).getIp(); }

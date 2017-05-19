@@ -6,11 +6,11 @@ void Communication::setup(){
 //    auto broadcastIP = "10.230.0.255";
 
     // ---- Declaring your device
-    auto deviceName = "BerlinPunk";
+    deviceName_myself = "BerlinPunk";
     auto portGettingMessages = 111;     // ---> THE OTHER SIDE sends messages to this port
     auto portSendingTo = 222;           // ---> THE OTHER SIDE gets messages to this port
 
-    handShaker.setup( deviceName, broadcastIP, portGettingMessages, portSendingTo );
+    handShaker.setup( deviceName_myself, broadcastIP, portGettingMessages, portSendingTo );
 }
 
 
@@ -23,6 +23,7 @@ void Communication::draw(){
     ofBackground( 255 );
 
     ofDrawBitmapStringHighlight( "Amount: " + ofToString( handShaker.getDeviceAmountFound() ), 100, 100 );
+    ofDrawBitmapStringHighlight( "Found yourself: " + ofToString( handShaker.isDeviceFound( deviceName_myself ) ), 300, 100 );
 
     for ( int i = 0; i < handShaker.getDeviceAmountFound(); i++ )
     {
@@ -32,4 +33,3 @@ void Communication::draw(){
         ofDrawBitmapStringHighlight( "port Sending : " + ofToString( handShaker.getPortSendingTo( i ) ), 700, 140 + i*20);
     }
 }
-1

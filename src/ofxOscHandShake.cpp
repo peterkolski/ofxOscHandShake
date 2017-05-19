@@ -1,5 +1,17 @@
 #include "ofxOscHandShake.h"
 
+bool ofxOscHandShake::isDeviceFound( const string name )
+{
+    if ( devicesMap_.count( name ) )
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
 void ofxOscHandShake::setup( const string deviceName, const string broadcastIP, const int portGetting,
                              const int portSendingTo )
 {

@@ -11,4 +11,5 @@ class Communication : public ofBaseApp{
 		void draw();
 
 	ofxOscHandShake			handShaker;
+	string deviceName_myself;
 };
