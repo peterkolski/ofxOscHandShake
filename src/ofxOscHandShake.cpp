@@ -9,10 +9,8 @@ void ofxOscHandShake::setup( const string deviceName, const string broadcastIP )
 void ofxOscHandShake::setup( const string deviceName, const string broadcastIP, const int portGetting,
                              const int portSendingTo )
 {
-    sender_.setup( deviceName, portBroadcast, broadcastIP );
+    sender_.setup( deviceName, portBroadcast, broadcastIP, portGetting, portSendingTo );
     receiver_.setup( portBroadcast );
-    portGettingMessage_ = portGetting;
-    portSendingTo_ = portSendingTo;
 }
 
 void ofxOscHandShake::update()

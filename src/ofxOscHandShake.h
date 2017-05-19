@@ -35,8 +35,6 @@ private:
     void    updateReceiver();
 
     int portBroadcast  = 19591; // Should be a number, which nobody uses
-    int portGettingMessage_ = -1;
-    int portSendingTo_      = -1;
     std::unordered_map< string, ofxOscHandShakeDevice > devicesMap_;
     ofxOscHandShakeSender   sender_;
     ofxOscHandShakeReceiver receiver_;
