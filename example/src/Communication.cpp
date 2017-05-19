@@ -4,10 +4,13 @@
 void Communication::setup(){
     auto broadcastIP = "192.168.2.255"; // ---> put your broadcast IP here
 //    auto broadcastIP = "10.230.0.255";
-    auto portGettingMessages = 111;
-    auto portSendingTo = 222;
 
-    handShaker.setup( "BerlinPunk", broadcastIP, portGettingMessages, portSendingTo );
+    // ---- Declaring your device
+    auto deviceName = "BerlinPunk";
+    auto portGettingMessages = 111;     // ---> THE OTHER SIDE sends messages to this port
+    auto portSendingTo = 222;           // ---> THE OTHER SIDE gets messages to this port
+
+    handShaker.setup( deviceName, broadcastIP, portGettingMessages, portSendingTo );
 }
 
 
