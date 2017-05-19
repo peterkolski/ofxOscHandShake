@@ -34,10 +34,11 @@ public:
 private:
     void    updateReceiver();
 
-    int portBroadcast  = 19591; // Should be a number, which nobody uses
-    std::unordered_map< string, ofxOscHandShakeDevice > devicesMap_;
+    string                  adressBroadcast = "ofxOscHandShake/reachout";
+    int                     portBroadcast  = 19591; // Should be a number, which nobody uses
     ofxOscHandShakeSender   sender_;
     ofxOscHandShakeReceiver receiver_;
+    std::unordered_map< string, ofxOscHandShakeDevice > devicesMap_;
 };
 
 

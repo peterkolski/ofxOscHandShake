@@ -9,9 +9,10 @@
 #include "ofxOscHandShakeReceiver.h"
 
 
-void ofxOscHandShakeReceiver::setup( const int portRecieveingAllMsg )
+void ofxOscHandShakeReceiver::setup( const int portRecieveingAllMsg, const string adressBroadcast )
 {
-        receiver_.setup( portRecieveingAllMsg );
+    receiver_.setup( portRecieveingAllMsg );
+    addressHandShake_  = adressBroadcast;
 }
 
 
@@ -20,7 +21,6 @@ ofxOscHandShakeDevice ofxOscHandShakeReceiver::getDeviceCurrent()
     ofxOscMessage messageOSC;
     receiver_.getNextMessage(&messageOSC);
 
-    // TODO This can crash, if you get the wrong message
     // Message 0 -> name
     // Message 1 -> portGetting
     // Message 2 -> portSending

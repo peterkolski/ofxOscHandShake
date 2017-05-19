@@ -17,15 +17,9 @@
 
 class ofxOscHandShakeReceiver{
 public:
-    ofxOscHandShakeReceiver()
-    {
-        addressHandShake_  = "ofxOscHandShake/reachout";
-    }
-    
-    void    setup( const int portRecieveingAllMsg );
-
-    bool    hasRecievedDevice() { return receiver_.hasWaitingMessages(); }
-    ofxOscHandShakeDevice getDeviceCurrent();
+    void                    setup( const int portRecieveingAllMsg, const string adressBroadcast );
+    bool                    hasRecievedDevice() { return receiver_.hasWaitingMessages(); }
+    ofxOscHandShakeDevice   getDeviceCurrent();
 
 private:
     ofxOscReceiver  receiver_;
